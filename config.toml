@@ -5,3 +5,18 @@ packages = ["make", "wget", "adduser"]
 	url = "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.5_amd64.deb"
 	dest = "fah-client_8.5.5_amd64.deb"
 
+
+[network]
+	allowed_hosts = [
+	    "foldingathome.org",
+	    "v8-5.foldingathome.org",
+	    "app.foldingathome.org",
+	    "master.foldingathome.org",
+	    "api.foldingathome.org",
+		"assign1.foldingathome.org",
+		"assign2.foldingathome.org",
+		"assign3.foldingathome.org",
+		"assign4.foldingathome.org",
+		"assign5.foldingathome.org",
+		"assign6.foldingathome.org",
+	]
