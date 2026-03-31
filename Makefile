@@ -1,6 +1,3 @@
-START ?= 0
-END   ?= 1
-
 .PHONY: setup run clean
 
 setup:
@@ -9,5 +6,10 @@ setup:
 
 run:
 	@echo "=== Ejecutando Folding@home ==="
-	/usr/bin/fah-client --config /var/lib/fah-client/config.xml
+	/repo/fah-client-bastet/fah-client --user=worker --team=1067987 --account-token=qwC5gqwCFBHyOFBIY1ePFY1etH_1RtH_XHkdpXHksN0 &
+	sleep 10
+	echo '{"cmd":"unpause"}' | websocat ws://127.0.0.1:7396/api/websocket
+	sh control_output.sh
 
+clean 
+	rm -r client.db cores gpus.json log.txt work

@@ -1,5 +1,5 @@
 [requirements]
-packages = ["make", "wget", "adduser"]
+packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", "libbz2-dev", "liblz4-dev", "libsystemd-dev", "websocat"]
 
 [[download.files]]
 	url = "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.5_amd64.deb"
@@ -20,3 +20,6 @@ packages = ["make", "wget", "adduser"]
 		"assign5.foldingathome.org",
 		"assign6.foldingathome.org",
 	]
+
+[outputs]
+	dir = "work"
