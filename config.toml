@@ -1,5 +1,5 @@
 [requirements]
-packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", "libbz2-dev", "liblz4-dev", "libsystemd-dev", "websocat"]
+packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", "libbz2-dev", "liblz4-dev", "libsystemd-dev"]
 
 [[download.files]]
 	url = "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.5_amd64.deb"
