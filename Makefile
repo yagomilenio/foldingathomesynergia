@@ -12,4 +12,4 @@ run:
 	sh control_output.sh
 
 clean:
-	rm -r client.db cores gpus.json log.txt work
+	rm -rf client.db cores gpus.json log.txt work
