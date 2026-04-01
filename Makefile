@@ -6,7 +6,7 @@ setup:
 
 run:
 	@echo "=== Ejecutando Folding@home ==="
-	/repo/fah-client-bastet/fah-client --user=worker --team=1067987 --account-token=qwC5gqwCFBHyOFBIY1ePFY1etH_1RtH_XHkdpXHksN0 --machine-name=synergia-worker-$(cat /proc/sys/kernel/random/uuid | tr -d '-' | head -c 8) &
+	/repo/fah-client-bastet/fah-client --user=worker --team=1067987 --account-token=qwC5gqwCFBHyOFBIY1ePFY1etH_1RtH_XHkdpXHksN0 --machine-name=synergia-worker-test &
 	sleep 10
 	echo '{"cmd":"unpause"}' | ./websocat ws://127.0.0.1:7396/api/websocket
 	sh control_output.sh
