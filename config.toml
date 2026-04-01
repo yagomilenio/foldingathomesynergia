@@ -21,7 +21,8 @@ packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", 
 	    "assign4.foldingathome.org",
 	    "assign5.foldingathome.org",
 	    "assign6.foldingathome.org",
-	    "node1.foldingathome.org"
+	    "node1.foldingathome.org",
+		"vav17.fah.temple.edu"
 	]
 
 [outputs]
