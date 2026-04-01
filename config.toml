@@ -4,8 +4,13 @@ packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", 
 [[download.files]]
 	url = "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.5_amd64.deb"
 	dest = "fah-client_8.5.5_amd64.deb"
+	
+[[download.files]]
+	url = "https://github.com/vi/websocat/releases/latest/download/websocat.x86_64-unknown-linux-musl"
+	dest = "websocat"
+	post = "chmod a+x websocat"
 
-
+	
 [network]
 	allowed_hosts = [
 	    "foldingathome.org",
