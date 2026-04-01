@@ -14,12 +14,14 @@ packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", 
 	    "app.foldingathome.org",
 	    "master.foldingathome.org",
 	    "api.foldingathome.org",
-		"assign1.foldingathome.org",
-		"assign2.foldingathome.org",
-		"assign3.foldingathome.org",
-		"assign4.foldingathome.org",
-		"assign5.foldingathome.org",
-		"assign6.foldingathome.org",
+	    "api4.foldingathome.org",
+	    "assign1.foldingathome.org",
+	    "assign2.foldingathome.org",
+	    "assign3.foldingathome.org",
+	    "assign4.foldingathome.org",
+	    "assign5.foldingathome.org",
+	    "assign6.foldingathome.org",
+	    "node1.foldingathome.org"
 	]
 
 [outputs]
