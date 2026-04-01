@@ -11,5 +11,5 @@ run:
 	echo '{"cmd":"unpause"}' | websocat ws://127.0.0.1:7396/api/websocket
 	sh control_output.sh
 
-clean 
+clean:
 	rm -r client.db cores gpus.json log.txt work
