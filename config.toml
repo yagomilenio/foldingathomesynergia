@@ -46,4 +46,4 @@ packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", 
 	dir = "work"
 
 [hash]
-    exclude = ["cbang", "fah-client-bastet"]
+    exclude = ["cbang", "fah-client-bastet", "client.db"]
