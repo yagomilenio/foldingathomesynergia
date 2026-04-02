@@ -1,8 +1,4 @@
 #!/bin/bash
 
-chmod +x control_output.sh
-git clone https://github.com/cauldrondevelopmentllc/cbang
-git clone https://github.com/foldingathome/fah-client-bastet
-export CBANG_HOME=$PWD/cbang
-scons -C cbang
-scons -C fah-client-bastet
+wget https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.5_amd64.deb
+dpkg-deb -x fah-client_8.5.5_amd64.deb ./fah
