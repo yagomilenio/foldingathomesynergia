@@ -6,7 +6,7 @@ while true; do
 
     NEW_ID=`echo '{}' | ./websocat ws://127.0.0.1:7396/api/websocket | jq -r '.units[0].id'`
 
-    if [ -z "$NEW_ID" ]; then
+    if [ -z "$NEW_ID" ] || [ "$NEW_ID" = "null" ]; then
         sleep 10
         continue
     fi
