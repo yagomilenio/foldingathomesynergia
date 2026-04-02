@@ -1,24 +1,44 @@
 #!/bin/bash
 
-WU_ID=""
-
 while true; do
 
-    NEW_ID=`echo '{}' | ./websocat ws://127.0.0.1:7396/api/websocket | jq -r '.units[0].id'`
+    STATE=$(echo '{}' | ./websocat ws://127.0.0.1:7396/api/websocket)
+    
+    NEW_ID=$(echo "$STATE" | jq -r '.units[0].id // empty')
+    PROGRESS=$(echo "$STATE" | jq -r '.units[0].wu_progress // 0')
+    ETA=$(echo "$STATE" | jq -r '.units[0].eta // empty')
 
     if [ -z "$NEW_ID" ] || [ "$NEW_ID" = "null" ]; then
         sleep 10
         continue
     fi
 
-    if [ -z "$WU_ID" ]; then
-        WU_ID="$NEW_ID"
-        echo "WU detectada: $WU_ID"
-    elif [ "$NEW_ID" != "$WU_ID" ]; then
-        echo "WU cambió: $WU_ID -> $NEW_ID"
-        pkill fah-client
-        break
+
+    SLEEP_SECS=0
+    DAYS=$(echo "$ETA"    | grep -oP '\d+(?=d)' || echo 0)
+    HOURS=$(echo "$ETA"   | grep -oP '\d+(?=h)' || echo 0)
+    MINUTES=$(echo "$ETA" | grep -oP '\d+(?=m)' || echo 0)
+
+    SLEEP_SECS=$(( ${DAYS:-0}*86400 + ${HOURS:-0}*3600 + ${MINUTES:-0}*60 ))
+
+    if [ "$SLEEP_SECS" -gt 0 ]; then
+        sleep "$SLEEP_SECS"
     fi
 
-    sleep 30
+
+    while true; do
+        STATE=$(echo '{}' | ./websocat ws://127.0.0.1:7396/api/websocket)
+        NEW_PROGRESS=$(echo "$STATE" | jq -r '.units[0].wu_progress // 0')
+
+        
+        if [ "$(echo "$NEW_PROGRESS < $PROGRESS" | bc -l)" = "1" ]; then
+            sleep 300
+            pkill fah-client
+            exit 0
+        fi
+
+        PROGRESS=$NEW_PROGRESS
+        sleep 300
+    done
+
 done
