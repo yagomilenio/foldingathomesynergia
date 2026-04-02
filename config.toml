@@ -1,5 +1,5 @@
 [requirements]
-packages = ["scons", "build-essential", "fakeroot", "libssl-dev", "zlib1g-dev", "libbz2-dev", "liblz4-dev", "libsystemd-dev", "jq"]
+packages = ["jq"]
 	
 [[download.files]]
 	url = "https://github.com/vi/websocat/releases/latest/download/websocat.x86_64-unknown-linux-musl"
