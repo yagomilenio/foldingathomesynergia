@@ -13,5 +13,5 @@ run:
 	./control_output.sh
 
 clean:
-	rm -f client.db gpus.json log.txt
+	rm -f gpus.json log.txt
 	rm -rf cores work
