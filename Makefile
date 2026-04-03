@@ -11,6 +11,7 @@ run:
 	sleep 10
 	echo '{"cmd":"unpause"}' | ./websocat ws://127.0.0.1:7396/api/websocket
 	echo '{"cmd":"finish"}' | ./websocat ws://127.0.0.1:7396/api/websocket
+	sleep 300
 	./control_upload.sh
 
 clean:
