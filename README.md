@@ -1,5 +1,4 @@
 # foldingathomesynergia
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/yagomilenio/foldingathomesynergia)
 
 Tarea pública de la plataforma **Synergia** para contribuir a la investigación científica de [Folding@home](https://foldingathome.org).
 
